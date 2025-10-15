@@ -1,0 +1,46 @@
+<?php
+namespace Controllers;
+
+use Classes\Paginacion;
+use Model\Paquete;
+use Model\Regalo;
+use Model\Registro;
+use Model\Usuario;
+use MVC\Router;
+
+class RegistradosController {
+  public static function index(Router $router){
+    admin();
+
+    $pagina_actual = $_GET["page"];
+    $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
+    if(!$pagina_actual || $pagina_actual < 1){
+      header("Location: /admin/registrados?page=1");
+    };
+
+    $registros_por_pagina = 10;
+    $total_registros = Registro::total();
+
+    $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total_registros);
+    if($paginacion->total_paginas() < $pagina_actual){
+      header("Location: /admin/registrados?page=1");
+    };
+
+    //Obtener registrados
+    $registrados = Registro::paginar($registros_por_pagina, $paginacion->offset());
+    foreach($registrados as $registrado){
+      $registrado->usuario = Usuario::find($registrado->usuario_id);
+      $registrado->paquete = Paquete::find($registrado->paquete_id);
+      if($registrado->regalo_id){
+        $registrado->regalo = Regalo::find($registrado->regalo_id);
+      }
+    }
+
+    $router->render("admin/registrados/index", [
+      "titulo" => "Usuarios registrados",
+      "registrados" => $registrados,
+      "paginacion" => $paginacion->paginacion()
+    ]);
+  }
+};
+?>
