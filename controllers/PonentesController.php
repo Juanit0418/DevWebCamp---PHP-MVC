@@ -19,10 +19,15 @@ class PonentesController {
     $registros_por_pagina = 10;
     $total_registros = Ponente::total();
 
-    $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total_registros);
-    if($paginacion->total_paginas() < $pagina_actual){
-      header("Location: /admin/ponentes?page=1");
+    if(!$total_registros){
+      header("Location: /admin/ponentes/crear");
+    } else {
+      $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total_registros);
+      if($paginacion->total_paginas() < $pagina_actual){
+        header("Location: /admin/ponentes?page=1");
+      };
     };
+
 
     //Obtener ponentes
     $ponentes = Ponente::paginar($registros_por_pagina, $paginacion->offset());

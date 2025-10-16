@@ -8,8 +8,8 @@
 
   <form method="POST" action="" class="formulario">
     <div class="formulario__campo">
-      <label for="password" class="formulario__campo--label">Nueva Contraseña</label>
-      <input type="password" id="password" class="formulario__campo--input" placeholder="Tu Nueva Contraseña" name="password">
+      <label for="password" class="formulario__label">Nueva Contraseña</label>
+      <input type="password" id="password" class="formulario__input" placeholder="Tu Nueva Contraseña" name="password">
     </div>
 
     <input type="submit" class="formulario__submit" value="Reestablecer">

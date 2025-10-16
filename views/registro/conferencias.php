@@ -4,11 +4,15 @@
 
 
 <h2 class="pagina__heading"><?php echo $titulo; ?></h2>
+<?php if(isset($eventos) && !empty($eventos)){ ?>
 <p class="pagina__descripcion">Elige los eventos a los cuales deseas tener acceso, maximo 5</p>
 
 <div class="eventos-registro">
   <main class="eventos-registro__listado">
+    <?php if(isset($eventos["conferencias_v"]) || isset($eventos["conferencias_s"])){ ?>
     <h3 class="eventos-registro__heading--conferencias">&lt;Conferencias/></h3>
+
+    <?php if(!empty($eventos["conferencias_v"])){ ?>
     <p class="eventos-registro__fecha">Viernes, 9 de Enero</p>
 
     <div class="eventos-registro__grid">
@@ -16,7 +20,9 @@
         <?php include __DIR__ . "/evento.php" ?>
       <?php } ?>
     </div> <!-- evento dia -->
+    <?php } ?>
 
+    <?php if(!empty($eventos["conferencias_s"])){ ?>
     <p class="eventos-registro__fecha">Sábado, 10 de Enero</p>
 
     <div class="eventos-registro__grid">
@@ -24,8 +30,12 @@
         <?php include __DIR__ . "/evento.php" ?>
       <?php } ?>
     </div> <!-- evento dia -->
+    <?php } ?>
+    <?php } ?>
 
+    <?php if(isset($eventos["workshops_v"]) || isset($eventos["workshops_s"])){ ?>
     <h3 class="eventos-registro__heading--workshops">&lt;Workshops/></h3>
+    <?php if(!empty($eventos["workshops_v"])){ ?>
     <p class="eventos-registro__fecha">Viernes, 9 de Enero</p>
 
     <div class="eventos-registro__grid eventos--workshop">
@@ -33,7 +43,9 @@
         <?php include __DIR__ . "/evento.php" ?>
       <?php } ?>
     </div> <!-- evento dia -->
+    <?php } ?>
 
+    <?php if(!empty($eventos["workshops_s"])){ ?>
     <p class="eventos-registro__fecha">Sábado, 10 de Enero</p>
 
     <div class="eventos-registro__grid eventos--workshop">
@@ -41,6 +53,9 @@
         <?php include __DIR__ . "/evento.php" ?>
       <?php } ?>
     </div> <!-- evento dia -->
+    <?php } ?>
+    <?php } ?>
+    <?php } ?>
   </main>
 
   <aside class="registro">
@@ -67,4 +82,4 @@
       </div>
     </form>
   </aside>
-</div>
+</div> <!--.eventos-registro-->

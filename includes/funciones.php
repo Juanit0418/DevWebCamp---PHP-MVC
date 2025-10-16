@@ -47,6 +47,13 @@ function autenticado() : void {
     };
 };
 
+function no_autenticado() : void {
+    if(is_auth()){
+        header("Location: /");
+        exit;
+    };
+};
+
 function admin() : void {
     if(!is_admin()){
         header("Location: /");

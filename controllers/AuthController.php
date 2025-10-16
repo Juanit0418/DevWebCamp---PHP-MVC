@@ -8,6 +8,7 @@ use MVC\Router;
 
 class AuthController {
     public static function login(Router $router) {
+        no_autenticado();
 
         $alertas = [];
 
@@ -67,6 +68,7 @@ class AuthController {
     }
 
     public static function registro(Router $router) {
+        no_autenticado();
         $alertas = [];
         $usuario = new Usuario;
 
@@ -116,6 +118,7 @@ class AuthController {
     }
 
     public static function olvide(Router $router) {
+        no_autenticado();
         $alertas = [];
         
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -160,6 +163,7 @@ class AuthController {
     }
 
     public static function reestablecer(Router $router) {
+        no_autenticado();
 
         $token = s($_GET['token']);
 
@@ -212,6 +216,7 @@ class AuthController {
     }
 
     public static function mensaje(Router $router) {
+        no_autenticado();
 
         $router->render('auth/mensaje', [
             'titulo' => 'Cuenta Creada Exitosamente'
@@ -219,6 +224,7 @@ class AuthController {
     }
 
     public static function confirmar(Router $router) {
+        no_autenticado();
         
         $token = s($_GET['token']);
 

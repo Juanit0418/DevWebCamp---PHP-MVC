@@ -52,7 +52,7 @@
     async function buscar_eventos(){
       const {categoria_id, dia} = busqueda;
 
-      const url = `http://localhost:3000/api/eventos-horario?categoria_id=${categoria_id}&dia_id=${dia}`;
+      const url = `${window.location.origin}/api/eventos-horario?categoria_id=${categoria_id}&dia_id=${dia}`;
       const resultado = await fetch(url);
       const eventos = await resultado.json();
 

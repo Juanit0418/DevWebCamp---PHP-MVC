@@ -6,28 +6,28 @@
 
   <form method="POST" action="/registro" class="formulario">
     <div class="formulario__campo">
-      <label for="nombre" class="formulario__campo--label">Nombre</label>
-      <input type="text" id="nombre" class="formulario__campo--input" placeholder="Tu nombre" name="nombre" value="<?php echo $usuario->nombre; ?>">
+      <label for="nombre" class="formulario__label">Nombre</label>
+      <input type="text" id="nombre" class="formulario__input" placeholder="Tu nombre" name="nombre" value="<?php echo $usuario->nombre; ?>">
     </div>
 
     <div class="formulario__campo">
-      <label for="apellido" class="formulario__campo--label">Apellido</label>
-      <input type="text" id="apellido" class="formulario__campo--input" placeholder="Tu apellido" name="apellido" value="<?php echo $usuario->apellido; ?>">
+      <label for="apellido" class="formulario__label">Apellido</label>
+      <input type="text" id="apellido" class="formulario__input" placeholder="Tu apellido" name="apellido" value="<?php echo $usuario->apellido; ?>">
     </div>
 
     <div class="formulario__campo">
-      <label for="email" class="formulario__campo--label">Email</label>
-      <input type="email" id="email" class="formulario__campo--input" placeholder="Tu Email" name="email" value="<?php echo $usuario->email; ?>">
+      <label for="email" class="formulario__label">Email</label>
+      <input type="email" id="email" class="formulario__input" placeholder="Tu Email" name="email" value="<?php echo $usuario->email; ?>">
     </div>
 
     <div class="formulario__campo">
-      <label for="password" class="formulario__campo--label">Contraseña</label>
-      <input type="password" id="password" class="formulario__campo--input" placeholder="Tu contraseña" name="password">
+      <label for="password" class="formulario__label">Contraseña</label>
+      <input type="password" id="password" class="formulario__input" placeholder="Tu contraseña" name="password">
     </div>
 
     <div class="formulario__campo">
-      <label for="re_password" class="formulario__campo--label">Repetir Contraseña</label>
-      <input type="password" id="re_password" class="formulario__campo--input" placeholder="Repite tu contraseña" name="re_password">
+      <label for="re_password" class="formulario__label">Repetir Contraseña</label>
+      <input type="password" id="re_password" class="formulario__input" placeholder="Repite tu contraseña" name="re_password">
     </div>
 
     <input type="submit" class="formulario__submit" value="Crear Cuenta">

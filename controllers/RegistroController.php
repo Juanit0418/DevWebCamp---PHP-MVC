@@ -38,6 +38,7 @@ class RegistroController {
 
     if($_SERVER["REQUEST_METHOD"] === "POST"){
       $registro = Registro::where("usuario_id", $_SESSION["id"]);
+
       if(isset($registro) && $registro->usuario_id == 3){
         header("Location: /boleto?id=" . urlencode($registro->token));
         exit;
@@ -49,7 +50,8 @@ class RegistroController {
         "paquete_id"  => 3,
         "pago_id" => "",
         "token" => $token,
-        "usuario_id" => $_SESSION["id"]
+        "usuario_id" => $_SESSION["id"],
+        "regalo_id" => 10
       );
 
       $registro = new Registro($datos);
@@ -76,8 +78,10 @@ class RegistroController {
       $datos = $_POST;
       $datos["token"] = substr(md5(uniqid(rand(), true)), 0,  8);
       $datos["usuario_id"] = $_SESSION["id"];
+      $datos["regalo_id"] = 10;
       try {
         $registro = new Registro($datos);
+
         $resultado = $registro->guardar();
         echo json_encode($resultado);
       } catch(\Throwable $th) {
@@ -104,7 +108,7 @@ class RegistroController {
     exit;
     }
 
-    if(isset($registro->regalo_id)){
+    if(isset($registro->regalo_id) && $registro->regalo_id !== "10"){
       header("Location: /boleto?id=" . urlencode($registro->token));
       exit;
     };
@@ -204,8 +208,7 @@ class RegistroController {
   }
 
   public static function boleto(Router $router){
-    autenticado();
-
+    
     //Validar la URL
     $id = $_GET["id"];
     if(!$id || strlen($id) !== 8){

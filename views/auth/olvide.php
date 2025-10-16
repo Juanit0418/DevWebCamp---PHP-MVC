@@ -6,8 +6,8 @@
 
   <form method="POST" action="/olvide" class="formulario">
     <div class="formulario__campo">
-      <label for="email" class="formulario__campo--label">Email</label>
-      <input type="email" id="email" class="formulario__campo--input" placeholder="Tu Email" name="email">
+      <label for="email" class="formulario__label">Email</label>
+      <input type="email" id="email" class="formulario__input" placeholder="Tu Email" name="email">
     </div>
 
     <input type="submit" class="formulario__submit" value="Enviar Instrucciones">

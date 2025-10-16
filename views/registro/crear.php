@@ -69,7 +69,7 @@
                 body : datos
               }).then(respuesta => respuesta.json()).then(resultado => {
                 if(resultado.resultado){
-                  actions.redirect("http://localhost:3000/finalizar-registro/conferencias");
+                  actions.redirect(`${window.location.origin}/finalizar-registro/conferencias`);
                 };
               });
             });
@@ -140,7 +140,7 @@
                 body : datos
               }).then(respuesta => respuesta.json()).then(resultado => {
                 if(resultado.resultado){
-                  actions.redirect("http://localhost:3000/finalizar-registro/conferencias");
+                  actions.redirect(`${window.location.origin}/finalizar-registro/conferencias`);
                 };
               });
             });
