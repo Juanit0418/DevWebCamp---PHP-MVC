@@ -30,7 +30,7 @@
         <li class="paquete__elemento">Comida y bebida</li>
       </ul>
 
-      <p class="paquete__precio">$ 199.00</p>
+      <p class="paquete__precio">$ <?php echo $presencial->precio; ?></p>
       <div id="paypal-button-container-presencial"></div>
 
       <script>
@@ -50,7 +50,7 @@
               purchase_units: [{
                 description: "1",
                 amount: {
-                  value: '199.00', //cambiar este valor según el producto
+                  value: '<?php echo $presencial->precio; ?>', //cambiar este valor según el producto
                   currency_code: 'USD'
                 }
               }]
@@ -100,7 +100,7 @@
         
       </ul>
 
-      <p class="paquete__precio">$ 49.00</p>
+      <p class="paquete__precio">$ <?php echo $virtual->precio; ?></p>
 
       <div id="paypal-button-container-virtual"></div>
 
@@ -121,7 +121,7 @@
               purchase_units: [{
                 description: "2",
                 amount: {
-                  value: '49.00', //cambiar este valor según el producto
+                  value: '<?php echo $virtual->precio; ?>', //cambiar este valor según el producto
                   currency_code: 'USD'
                 }
               }]

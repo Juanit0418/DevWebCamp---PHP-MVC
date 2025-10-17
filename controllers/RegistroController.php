@@ -28,8 +28,13 @@ class RegistroController {
       header("Location: /finalizar-registro/conferencias");
     };
 
+    $presencial = Paquete::find(1);
+    $virtual = Paquete::find(2);
+
     $router->render("registro/crear", [
-      "titulo" => "Finalizar Registro"
+      "titulo" => "Finalizar Registro",
+      "presencial" => $presencial,
+      "virtual" => $virtual
     ]);
   }
 
