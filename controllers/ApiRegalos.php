@@ -6,7 +6,6 @@ use Model\Registro;
 
 class ApiRegalos {
   public static function index(){
-    admin();
 
     $regalos = Regalo::all();
     foreach($regalos as $regalo) {

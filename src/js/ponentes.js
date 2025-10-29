@@ -12,7 +12,7 @@
     input_ponentes.addEventListener('input', buscar_ponentes);
 
     async function obtener_ponentes(){
-      const url = `http://localhost:3000/api/ponentes`;
+      const url = `${window.location.origin}/api/ponentes`;
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
 
