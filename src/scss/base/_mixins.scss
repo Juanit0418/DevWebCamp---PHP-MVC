@@ -72,7 +72,7 @@
 }
 
 @mixin nombre_pagina {
-    @include headings();
+    @include heading();
     margin: 6rem 0 3rem 0;
     text-align: center;
 }

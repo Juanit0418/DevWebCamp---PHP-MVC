@@ -5,22 +5,22 @@ include_once __DIR__  . "/conferencias.php";
 <section class="resumen">
   <div class="resumen__grid">
     <div class="resumen__bloque" data-aos="<?php aos_animacion(); ?>">
-      <p class="resumen_texto resumen_texto--numero"><?php echo $ponentes_total; ?></p>
+      <p class="resumen__texto resumen__texto--numero"><?php echo $ponentes_total; ?></p>
       <p class="resumen__texto">speakers</p>
     </div> <!--resumen bloque -->
 
     <div class="resumen__bloque" data-aos="<?php aos_animacion(); ?>">
-      <p class="resumen_texto resumen_texto--numero"><?php echo $conferencias_totales; ?></p>
+      <p class="resumen__texto resumen__texto--numero"><?php echo $conferencias_totales; ?></p>
       <p class="resumen__texto">conferencias</p>
     </div> <!--resumen bloque -->
 
     <div class="resumen__bloque" data-aos="<?php aos_animacion(); ?>">
-      <p class="resumen_texto resumen_texto--numero"><?php echo $workshops_totales; ?></p>
+      <p class="resumen__texto resumen__texto--numero"><?php echo $workshops_totales; ?></p>
       <p class="resumen__texto">workshops</p>
     </div> <!--resumen bloque -->
 
     <div class="resumen__bloque" data-aos="<?php aos_animacion(); ?>">
-      <p class="resumen_texto resumen_texto--numero">500</p>
+      <p class="resumen__texto resumen__texto--numero">500</p>
       <p class="resumen__texto">asistentes</p>
     </div> <!--resumen bloque -->
   </div> <!--resumen grid -->
